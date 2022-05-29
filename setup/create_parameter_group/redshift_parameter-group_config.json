@@ -1,0 +1,10 @@
+[
+  {
+    "ParameterName": "max_concurrency_scaling_clusters",
+    "ParameterValue": "3"
+  },
+  {
+    "ParameterName": "wlm_json_configuration",
+    "ParameterValue": "[{\"user_group\":[\"adhoc_l2_group\",\"dwh_batch_group\"],\"query_group\":[],\"auto_wlm\":true,\"queue_type\":\"auto\",\"name\":\"main_queue\",\"concurrency_scaling\":\"off\",\"priority\":\"high\",\"rules\":[{\"rule_name\":\"long_query_main_queue\",\"predicate\":[{\"metric_name\":\"query_execution_time\",\"operator\":\">\",\"value\":10800}],\"action\":\"abort\"},{\"rule_name\":\"temp_usage_main_queue\",\"predicate\":[{\"metric_name\":\"query_blocks_read\",\"operator\":\">\",\"value\":5120}],\"action\":\"abort\"}]},{\"user_group\":[\"dwh_tool_group\"],\"query_group\":[],\"auto_wlm\":true,\"queue_type\":\"auto\",\"name\":\"dwh_tool_queue\",\"rules\":[{\"rule_name\":\"long_query_dwh_tool_queue\",\"predicate\":[{\"metric_name\":\"query_execution_time\",\"operator\":\">\",\"value\":10800}],\"action\":\"abort\"},{\"rule_name\":\"temp_usage_dwh_tool_queue\",\"predicate\":[{\"metric_name\":\"query_execution_time\",\"operator\":\">\",\"value\":5120}],\"action\":\"abort\"}]},{\"user_group\":[\"adhoc_l1_group\"],\"query_group\":[],\"auto_wlm\":true,\"queue_type\":\"auto\",\"name\":\"user_queue\",\"concurrency_scaling\":\"off\",\"priority\":\"low\",\"rules\":[{\"rule_name\":\"long_query_user_queue\",\"predicate\":[{\"metric_name\":\"query_execution_time\",\"operator\":\">\",\"value\":10800}],\"action\":\"abort\"},{\"rule_name\":\"temp_usage_user_queue\",\"predicate\":[{\"metric_name\":\"query_execution_time\",\"operator\":\">\",\"value\":5120}],\"action\":\"abort\"}]},{\"auto_wlm\":true,\"user_group\":[],\"query_group\":[],\"name\":\"Default queue\",\"concurrency_scaling\":\"off\",\"rules\":[{\"rule_name\":\"long_query_default_queue\",\"predicate\":[{\"metric_name\":\"query_execution_time\",\"operator\":\">\",\"value\":10800}],\"action\":\"abort\"},{\"rule_name\":\"temp_usage_default_queue\",\"predicate\":[{\"metric_name\":\"query_execution_time\",\"operator\":\">\",\"value\":5120}],\"action\":\"abort\"}]},{\"short_query_queue\":true}]"
+  }
+]

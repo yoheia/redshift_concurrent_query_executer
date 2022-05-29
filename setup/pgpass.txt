@@ -1,0 +1,5 @@
+redshift-cluster-poc.**************.ap-northeast-1.redshift.amazonaws.com:5439:dev:awsuser:Password1
+redshift-cluster-poc.**************.ap-northeast-1.redshift.amazonaws.com:5439:dev:dwh_batch_user:Password1
+redshift-cluster-poc.**************.ap-northeast-1.redshift.amazonaws.com:5439:dev:dwh_tool_user:Password1
+redshift-cluster-poc.**************.ap-northeast-1.redshift.amazonaws.com:5439:dev:user_l1_user:Password1
+redshift-cluster-poc.**************.ap-northeast-1.redshift.amazonaws.com:5439:dev:user_l2_user:Password1

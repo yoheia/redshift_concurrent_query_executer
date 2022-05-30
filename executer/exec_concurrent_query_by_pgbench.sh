@@ -2,13 +2,13 @@
 
 export LANG=C
 SCRIPT_BASE_NAME=$(basename $0 .sh)
-CURRENT_DATE=`date '+%Y-%m-%d-%H%M%S'`
+CURRENT_DATE=`date '+%Y%m%d_%H%M%S'`
 BASE_DIR=$(cd $(dirname $0);pwd)
 cd $BASE_DIR
 
 # Default value set, if shell variables are not pased
-#PGBENCH_PATH=${PGBENCH_PATH:-/usr/pgsql-13/bin/pgbench}
-PGBENCH_PATH=${PGBENCH_PATH:-pgbench}
+PGBENCH_PATH=${PGBENCH_PATH:-/usr/pgsql-13/bin/pgbench}
+#PGBENCH_PATH=${PGBENCH_PATH:-pgbench}
 PG_HOST=${PG_HOST:-redshift-cluster-poc.ceyg6jv96hfq.ap-northeast-1.redshift.amazonaws.com}
 PG_USER=${PG_USER:-awsuser}
 PG_DB=${PG_DB:-dev}
@@ -27,6 +27,6 @@ fi
 
 # Execute custom query by pgbench
 ${PGBENCH_PATH} -r -c ${PG_CONCURRENCY} -j ${PG_CONCURRENCY} -n -T ${PG_DURATION} -f ${SQL_SCRIPT} -U ${PG_USER} -h ${PG_HOST} -d ${PG_DB} -p ${PG_PORT} \
-	> "${LOG_DIR}/${SCRIPT_BASE_NAME}_${PG_USER}_${SQL_BASE_NAME}_${CURRENT_DATE}.log" 2>&1
+	> "${LOG_DIR}/${SCRIPT_BASE_NAME}-${PG_USER}-${SQL_BASE_NAME}-${CURRENT_DATE}.log" 2>&1
 
 exit 0

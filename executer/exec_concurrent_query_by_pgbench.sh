@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-export LANG=C
+export LC_ALL=C
 SCRIPT_BASE_NAME=$(basename $0 .sh)
 CURRENT_DATE=`date '+%Y%m%d_%H%M%S'`
 BASE_DIR=$(cd $(dirname $0);pwd)
